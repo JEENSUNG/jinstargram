@@ -12,6 +12,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.heo.jinstargramstart.domain.image.Image;
 import com.heo.jinstargramstart.domain.user.User;
 

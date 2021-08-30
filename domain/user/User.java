@@ -32,7 +32,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // 번호 증가 전략이 db 따라감
 	private int id;
 	
-	@Column(length = 20, unique = true)
+	@Column(length = 100, unique = true) //oauth2 로그인 위해서 컬럼 20-> 100으로 늘림
 	private String username;
 	private String password;
 	private String name;
@@ -60,4 +60,13 @@ public class User {
 		this.createDate = LocalDateTime.now();
 		
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", website="
+				+ website + ", bio=" + bio + ", email=" + email + ", phone=" + phone + ", gender=" + gender
+				+ ", profileImageUrl=" + profileImageUrl + ", role=" + role +", createDate="
+				+ createDate + "]";
+	}
+	
 }

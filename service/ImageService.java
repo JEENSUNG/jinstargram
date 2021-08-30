@@ -3,6 +3,7 @@ package com.heo.jinstargramstart.service;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,11 @@ import lombok.RequiredArgsConstructor;
 public class ImageService {
 
 	private final ImageRepository imageRepository;
+	
+	@Transactional(readOnly = true)
+	public List<Image> 인기사진(){
+		return imageRepository.mPopular();
+	}
 	
 	@Transactional(readOnly = true) // 리드온리를 안걸면 영속성 컨텍스트 변경 감지해서 더티체킹, flush(반영)
 	public Page<Image> 이미지스토리(int principalId, Pageable pageable) {
