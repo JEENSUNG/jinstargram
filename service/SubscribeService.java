@@ -60,7 +60,7 @@ public class SubscribeService {
 		List<SubscribeDto>subscribeDtos = result.list(query, SubscribeDto.class); //여러개받으므로 list(한개 받을때는 uniqueresult)
 		return subscribeDtos;
 	}
-	
+	//팔로워수 구현
 	@Transactional(readOnly = true)
 	public List<SubscribeDto> 구독자리스트(int principalId, int pageUserId){
 		StringBuffer sb = new 	StringBuffer();
@@ -71,8 +71,8 @@ public class SubscribeService {
 		sb.append("if((SELECT 1 FROM subscribe WHERE fromUserId =? AND toUserId=u.id), 1,0)subscribeState, ");
 		sb.append("if((?=u.id), 1,0) equalUserState ");
 		sb.append("FROM user u INNER JOIN subscribe s ");
-		sb.append("ON u.id = s.toUserId ");
-		sb.append("WHERE s.fromUserId = ?"); // 세미콜론 첨부되면 안됨
+		sb.append("ON u.id = s.fromUserId ");
+		sb.append("WHERE s.toUserId = ?"); // 세미콜론 첨부되면 안됨
 		//1. principalId 2. principalId 3. pageUserId 
 		
 		//쿼리 완성
