@@ -30,7 +30,7 @@ fix) ``을 이용하여 jsp파일을 수정하였고 몇 가지 오타가 있었
 
 5) @OneToMany 기법 사용할 때 FetchType을 Eager방식으로 구현하여 엑박이 뜸
 
-fix) Lazy방식으로 변경하면 먼저 페이지를 받아들여오는 것이 아니라, getImages()를 호출하면 이미지를 가져오게끔 해결
+fix) Lazy방식으로 변경하면 먼저 페이지를 받아들여오는 것이 아니라, getImages()를 호출하면 이미지를 가져오게끔 해결(웬만하면 Lazy 사용x)
 
 6) AOP처리할 때 ApiController를 먼저 구현해서 일반Controller보다 빨리 실행되어 에러
 
