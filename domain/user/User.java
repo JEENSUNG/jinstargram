@@ -36,11 +36,11 @@ public class User {
 	private String username;
 	private String password;
 	private String name;
-	private String website; // 웹사이트
+	private String website; // 웹사이트(필요는 없음)
 	private String bio; // 자기소개
-	private String email;
-	private String phone;
-	private String gender;
+	private String email; //이메일
+	private String phone; 
+	private String gender; //성별
 	
 	private String profileImageUrl;
 	private String role;
